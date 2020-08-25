@@ -10,8 +10,13 @@ require("./config/db");
 app.use(express.json());
 
 // setup my routes
+app.use("/api/items", require("./routes/item.route"));
 
 // 404 errors
+app.get("*", (req, res) => {
+    res.status(404).json({ message: "estas perdido", code: "EB404" });
+});
+
 
 // setup the server port
 app.listen(process.env.PORT, () =>

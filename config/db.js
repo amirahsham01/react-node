@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGODB, {
     useUnifiedTopology: true,
 },
     (err) => {
-        if (err) throw err;
+        // if (err) throw err;
         console.log("mongodb connected!");
     }
 );
